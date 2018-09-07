@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "组织机构";
+}
+
+<h3>组织机构管理</h3>
+
+<div class="row">
+    <div class="col-md-3">
+        <div id="jstree"></div>
+    </div>
+    <div class="col-md-9">
+        <iframe id="orgInfo" scrolling="no" src="" style="width:100%" frameborder="0"></iframe>
+    </div>
+</div>
+
+
+@section Scripts{
+    <link href="~/Plugins/jstree/themes/default/style.min.css" rel="stylesheet" />
+    <script src="~/Plugins/jstree/jstree.js"></script>
+
+    <script>
+        $(function () {
+            $("#jstree").jstree({
+                "core": {
+                    'data': {
+                        'url': "/XEngine/DataServ/GetTreeData",
+                        'dataType': 'json',
+                        'data': function (node) { // 传给服务端点击的节点
+                            //return { id: node.id == "#" ? "0" : node.id };
+                            return { clickId: node.id };
+                        },
+                        success: function () {
+                            //alert('ok');
+                        }
+                    }    
+                }
+            });
+
+            // 展开节点
+            $("#jstree").on("loaded.jstree", function (event, data) {
+                // 展开所有节点
+                //$('#jstree').jstree('open_all');
+                // 展开指定节点
+                data.instance.open_node(1);     // 单个节点 （1 是顶层的id）
+               // data.instance.open_node([1, 10]); // 多个节点 (展开多个节点只有在一次性装载后所有节点后才可行）
+            });
+
+            // 所有节点都加载完后
+            $("#jstree").on("ready.jstree", function (event, data) {
+                //alert('all ok');
+                data.instance.open_node(1); // 展开root节点
+                //// 隐藏根节点 http://stackoverflow.com/questions/10429876/how-to-hide-root-node-from-jstree
+
+                //$("#1_anchor").css("visibility", "hidden");
+                //$("li#1").css("position", "relative")
+                //$("li#1").css("top", "-20px")
+                //$("li#1").css("left", "-20px")
+                //$(".jstree-last .jstree-icon").first().hide();
+            });
+
+            // 获得点击节点的id
+            $('#jstree').on("changed.jstree", function (e, data) {
+                //console.log("The selected nodes are:");
+                //console.log(data.selected);
+                //alert('node.id is:' + data.node.id);
+                //alert('node.text is:' + data.node.text);
+                //alert('node.parent is:' + data.node.parent);
+                //console.log(data);
+
+                $("#orgInfo").attr("src", "/XEngine/Organization/Edit/" + data.node.id)
+                $("#inputCategory").val(data.node.text);
+
+                //$("#PId").val(data.node.id);
+                // TODO: 传递给Tab
+                //$.ajax({
+                //    'url': 'Home/GetTreeData/',
+                //    'data': { 'id': data.node.id }
+                //});
+            });
+        })
+
+        //iframe自适应高度
+        $(function () {
+            $("#orgInfo").load(function () {
+                var vHeight = $(this).contents().find("body").height() + 40;
+                $(this).height(vHeight < 300 ? 300 : vHeight);
+            });
+        })
+    </script>
+
+}

@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Content/signin.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+
+
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            <h2 class="form-signin-heading"> XX 系统 </h2>
+            <input type="text" id="inputUserName" name="inputUserName" class="form-control" placeholder="账号" required autofocus>
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="密码" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="ckbRememberMe" name="ckbRememberMe" value="remember-me"> 记住用户
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+            <div id="loginState" class="text-warning">
+                @ViewBag.LoginState
+            </div>
+        }
+    </div> <!-- /container -->
+</body>
+</html>

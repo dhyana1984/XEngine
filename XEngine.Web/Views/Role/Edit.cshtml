@@ -1,0 +1,166 @@
+﻿@model XEngine.Web.Models.SysRole
+
+@{
+    ViewBag.Title = "角色管理";
+    SelectList list = ViewData["nameList"] as SelectList;
+
+}
+
+
+<h2>修改角色 - @Model.Name</h2>
+
+
+@using (Html.BeginForm("Edit", "Role", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <ul id="myTabs" class="nav nav-tabs " role="tablist">
+            <li role="presentation" class="active">
+                <a href="#general" id="general-tab" role="tab" data-toggle="tab">基本设定</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#member" role="tab" id="member-tab" data-toggle="tab">成员</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="#permission" role="tab" id="permission-tab" data-toggle="tab">权限</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="general">
+                <br />
+                <div class="row">
+                    <div class="col-md-11">
+                        @Html.HiddenFor(model => model.ID)
+                        <div class="form-group">
+                            <label for="Name" class="col-md-1 control-label" style="text-align:left">角色名</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="DisplayName" class="col-md-1 control-label" style="text-align:left">显示名</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="DisplayName" name="DisplayName" value="@Model.DisplayName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Description" class="col-md-1 control-label" style="text-align:left">描述</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectIsActive" class="col-md-1 control-label" style="text-align:left">是否启用</label>
+                            <div class="col-md-2">
+                                @Html.DropDownList("selectIsActive", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ModifiedDate" class="col-md-1 control-label" style="text-align:left">修改日期</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="ModifiedDate" name="ModifiedDate" disabled value="@Model.ModifiedDate">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="member">
+                <br />
+                <div class="row">
+                    <div class="col-md-11">
+                        <div>
+                            @Html.ListBox("nameList")
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="permission">
+                <br />
+                <div class="row">
+                    <div class="col-md-11">
+                        <div>
+                            TODO:
+                            @*@Html.ListBox("reportList")*@
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-info" id="btnOk">确定</button>
+            <button type="button" class="btn btn-info" id="btnCancel">取消</button>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("返回", "Index")
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Plugins/bootstrap-duallistbox/jquery.bootstrap-duallistbox.js"></script>
+
+    <script>
+        var userList = $('select[name="nameList"]').bootstrapDualListbox({
+            //nonSelectedListLabel: 'Non-selected',
+            //selectedListLabel: 'Selected',
+            preserveSelectionOnMove: 'moved',
+            moveOnSelect: false,
+            filterTextClear: '显示全部',
+            filterPlaceHolder: '添加过滤条件',
+            moveSelectedLabel: '移动选中项',
+            moveAllLabel: '移动全部',
+            removeSelectedLabel: '移除选中项',
+            removeAllLabel: '移除全部',
+            infoText: '显示全部 {0}',
+            //infoText: '',
+            infoTextFiltered: '<span class="label label-warning">已过滤</span> {0} 共有 {1}',
+            infoTextEmpty: '空列表'
+        });
+        userList.bootstrapDualListbox("refresh", false)
+
+
+        var reportList = $('select[name="reportList"]').bootstrapDualListbox({
+            //nonSelectedListLabel: 'Non-selected',
+            //selectedListLabel: 'Selected',
+            preserveSelectionOnMove: 'moved',
+            moveOnSelect: false,
+            filterTextClear: '显示全部',
+            filterPlaceHolder: '添加过滤条件',
+            moveSelectedLabel: '移动选中项',
+            moveAllLabel: '移动全部',
+            removeSelectedLabel: '移除选中项',
+            removeAllLabel: '移除全部',
+            infoText: '显示全部 {0}',
+            //infoText: '',
+            infoTextFiltered: '<span class="label label-warning">已过滤</span> {0} 共有 {1}',
+            infoTextEmpty: '空列表'
+        });
+        reportList.bootstrapDualListbox("refresh", false)
+
+
+        $("#demoform").submit(function () {
+            alert($('[name="nameList"]').val());
+            //return false;
+        });
+
+        $(function () {
+            $("#btnCancel").click(function () {
+                location.reload();
+            });
+        });
+
+
+    </script>
+}

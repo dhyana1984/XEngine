@@ -1,0 +1,132 @@
+﻿@using XEngine.Web.Utility.MenuHelper
+@using XEngine.Web.Utility.BreadCrumbSiteMap
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - XEngine</title>
+    @Styles.Render("~/Content/css")
+
+    @Styles.Render("~/Content/DropdownMenuExtra.css") @* must be included*@
+
+
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    @*<link href="~/Content/bootstrap-submenu.css" rel="stylesheet" />*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("XEngine - 替换成程序名称", "Index", "Home", null, new { @class = "navbar-brand", @style = "color:#9f6135;font-weight: bold" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+
+                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("关于", "About", "Home")</li>
+                        <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>*@
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">权限管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/User">用户管理</a></li>
+                            <li><a href="~/Organization">组织机构管理</a></li>
+                            <li><a href="~/Role">角色管理</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">系统功能管理</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">系统日志管理</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Salary Info Management</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/HRModule/MaintainSalaryInfo/Index">Maintain Salary Info</a>
+                                    </li>
+                                    <li>
+                                        <a href="/HRModule/SalaryReview/Index">Salary Review</a>
+                                    </li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Salary Info Management</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a>dddd</a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Salary Info Management</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/HRModule/MaintainSalaryInfo/Index">Maintain Salary Info</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @Html.Raw(Html.GetMenuHtml("MenuTest"))
+
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">@User.Identity.Name</a></li>
+
+                    <li>
+                        <a href="~/account/logout">
+                            <i class="glyphicon glyphicon-log-out"></i>&nbsp;退出
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div>
+            <br />
+            @{
+                if (Html.PopulateBreadcrumb(Request.Url.AbsolutePath).ToString() != "")
+                {
+                    <ol class="breadcrumb">
+                        @Html.PopulateBreadcrumb(Request.Url.AbsolutePath)
+                    </ol>
+                }
+            }
+        </div>
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - XEngine</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/bootstrap-submenu.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

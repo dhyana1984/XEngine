@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6D3254F-B005-43C3-89D8-003D9F37E4BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XEngine.Web</RootNamespace>
+    <AssemblyName>XEngine.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\DataServ\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DataServController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SampleCRUDController.cs" />
+    <Compile Include="Controllers\SampleHtmlHelperController.cs" />
+    <Compile Include="Controllers\SampleRawSQLController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="DAL\XEngineContext.cs" />
+    <Compile Include="DAL\XEngineInitializer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IItem.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\MvcSiteMap.cs" />
+    <Compile Include="Models\MvcSiteMaps.cs" />
+    <Compile Include="Models\SysMenu.cs" />
+    <Compile Include="Models\SysOrganization.cs" />
+    <Compile Include="Models\SysPrivilege.cs" />
+    <Compile Include="Models\SysRole.cs" />
+    <Compile Include="Models\SysUser.cs" />
+    <Compile Include="Models\SysUserOrganization.cs" />
+    <Compile Include="Models\SysUserRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Utility\BreadCrumbSiteMap\MvcSiteMapExtensions.cs" />
+    <Compile Include="Utility\BreadCrumbSiteMap\MvcSiteMapHelper.cs" />
+    <Compile Include="Utility\Filter\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Utility\EncryptDecrypt.cs" />
+    <Compile Include="Utility\Filter\GetXMLRoles.cs" />
+    <Compile Include="Utility\MenuHelper\Base\BaseHtmlTagEngine.cs" />
+    <Compile Include="Utility\MenuHelper\Base\TagContainer.cs" />
+    <Compile Include="Utility\MenuHelper\HtmlBuilder.cs" />
+    <Compile Include="Utility\MenuHelper\MenuHelper.cs" />
+    <Compile Include="ViewModels\AssignedRoleData.cs" />
+    <Compile Include="ViewModels\AssignedUserData.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\ActionRoles.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\MvcSiteMapList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\bootstrap-submenu.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DropdownMenuExtra.css" />
+    <Content Include="Content\signin.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="HtmlPageTest.html" />
+    <Content Include="Images\CC_2.png" />
+    <Content Include="Images\CC_con.png" />
+    <Content Include="Images\Computer-icon.png" />
+    <Content Include="Images\Contact.png" />
+    <Content Include="Images\CoolMenuBig1.png" />
+    <Content Include="Images\GradientBlack.png" />
+    <Content Include="Images\GradientBlack40.png" />
+    <Content Include="Images\iPad-icon.png" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap-theme.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap-theme.min.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap.min.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\js\bootstrap.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\js\bootstrap.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\js\npm.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\about.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\apple-touch-icon.png" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\brand\bootstrap-outline.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\brand\bootstrap-punchout.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\brand\bootstrap-solid.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\css\docs.min.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\css\ie10-viewport-bug-workaround.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\css\src\docs.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\css\src\pygments-manni.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\flash\ZeroClipboard.swf" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\components.png" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\devices.png" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\expo-lyft.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\expo-newsweek.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\expo-riot.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\expo-vogue.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\img\sass-less.png" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\customize.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\docs.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\ie-emulation-modes-warning.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\ie8-responsive-file-warning.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\raw-files.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\src\application.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\src\customizer.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\anchor.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\autoprefixer.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\Blob.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\FileSaver.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\holder.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\jquery.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\jszip.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\less.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\uglify.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\js\vendor\ZeroClipboard.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\browser-bugs.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\components.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\css.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\customize.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap-theme.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap-theme.min.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap.min.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\js\bootstrap.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\js\bootstrap.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\js\npm.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\blog\blog.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\blog\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\carousel\carousel.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\carousel\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\cover\cover.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\cover\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\dashboard\dashboard.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\dashboard\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\grid\grid.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\grid\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\jumbotron-narrow\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\jumbotron-narrow\jumbotron-narrow.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\jumbotron\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\jumbotron\jumbotron.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\justified-nav\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\justified-nav\justified-nav.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar-fixed-top\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar-fixed-top\navbar-fixed-top.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar-static-top\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar-static-top\navbar-static-top.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\navbar\navbar.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\non-responsive\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\non-responsive\non-responsive.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\offcanvas\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\offcanvas\offcanvas.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\offcanvas\offcanvas.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\blog.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\carousel.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\cover.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\dashboard.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\equal-height-columns.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\grid.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\jumbotron-narrow.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\jumbotron.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\justified-nav.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\navbar-fixed.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\navbar-static.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\navbar.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\non-responsive.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\offcanvas.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\sign-in.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\starter-template.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\sticky-footer-navbar.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\sticky-footer.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\screenshots\theme.jpg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\signin\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\signin\signin.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\starter-template\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\starter-template\starter-template.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\sticky-footer-navbar\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\sticky-footer\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\theme\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\theme\theme.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\tooltip-viewport\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\tooltip-viewport\tooltip-viewport.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\examples\tooltip-viewport\tooltip-viewport.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\favicon.ico" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\getting-started.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\javascript.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\migration.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\robots.txt" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\sitemap.xml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\ads.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\alerts.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\badges.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\breadcrumbs.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\button-dropdowns.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\button-groups.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\dropdowns.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\glyphicons.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\input-groups.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\jumbotron.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\labels.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\list-group.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\media.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\navbar.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\navs.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\page-header.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\pagination.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\panels.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\progress-bars.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\responsive-embed.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\thumbnails.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\components\wells.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\buttons.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\code.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\forms.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\grid.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\helpers.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\images.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\less.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\overview.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\responsive-utilities.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\sass.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\tables.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\css\type.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\customizer-variables.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\footer.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\accessibility.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\browser-device-support.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\community.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\disabling-responsiveness.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\download.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\examples.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\grunt.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\license.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\template.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\third-party-support.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\tools.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\translations.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\getting-started\whats-included.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\header.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\affix.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\alerts.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\buttons.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\carousel.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\collapse.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\dropdowns.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\modal.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\overview.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\popovers.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\scrollspy.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\tabs.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\tooltips.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\js\transitions.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\about.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\components.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\css.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\customize.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\getting-started.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\javascript.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\main.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_includes\nav\migration.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_layouts\default.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_layouts\home.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="OpenSource\bootstrap-3.3.6\Gruntfile.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\bs-commonjs-generator.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\bs-lessdoc-parser.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\bs-raw-files-generator.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\affix.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\alert.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\button.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\carousel.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\collapse.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\dropdown.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\modal.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\popover.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\scrollspy.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tab.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\index.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\affix.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\alert.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\button.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\carousel.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\collapse.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\dropdown.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\modal.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\phantom.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\popover.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\scrollspy.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\tab.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\tooltip.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\vendor\jquery.min.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\vendor\qunit.css" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\vendor\qunit.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\affix-with-sticky-footer.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\affix.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\alert.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\button.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\carousel.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\collapse.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\dropdown.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\modal.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\popover.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\scrollspy.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\tab.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\visual\tooltip.html" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tooltip.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\transition.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\package.js" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\requirements.txt" />
+    <Content Include="OpenSource\bootstrap-submenu-master\dist\css\bootstrap-submenu.css" />
+    <Content Include="OpenSource\bootstrap-submenu-master\dist\css\bootstrap-submenu.min.css" />
+    <Content Include="OpenSource\bootstrap-submenu-master\dist\js\bootstrap-submenu.js" />
+    <Content Include="OpenSource\bootstrap-submenu-master\dist\js\bootstrap-submenu.min.js" />
+    <Content Include="OpenSource\bootstrap-submenu-master\js\bootstrap-submenu.js" />
+    <Content Include="Plugins\bootstrap-duallistbox\bootstrap-duallistbox.css" />
+    <Content Include="Plugins\bootstrap-duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="Plugins\bootstrap-duallistbox\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Plugins\bootstrap-duallistbox\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Plugins\jstree\jstree.js" />
+    <Content Include="Plugins\jstree\jstree.min.js" />
+    <Content Include="Plugins\jstree\themes\default-dark\32px.png" />
+    <Content Include="Plugins\jstree\themes\default-dark\40px.png" />
+    <Content Include="Plugins\jstree\themes\default-dark\style.css" />
+    <Content Include="Plugins\jstree\themes\default-dark\style.min.css" />
+    <Content Include="Plugins\jstree\themes\default-dark\throbber.gif" />
+    <Content Include="Plugins\jstree\themes\default\32px.png" />
+    <Content Include="Plugins\jstree\themes\default\40px.png" />
+    <Content Include="Plugins\jstree\themes\default\style.css" />
+    <Content Include="Plugins\jstree\themes\default\style.min.css" />
+    <Content Include="Plugins\jstree\themes\default\throbber.gif" />
+    <Content Include="Plugins\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Plugins\owl-carousel\grabbing.png" />
+    <Content Include="Plugins\owl-carousel\owl.carousel.css" />
+    <Content Include="Plugins\owl-carousel\owl.carousel.js" />
+    <Content Include="Plugins\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Plugins\owl-carousel\owl.theme.css" />
+    <Content Include="Plugins\owl-carousel\owl.transitions.css" />
+    <Content Include="Scripts\bootstrap-submenu.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\.editorconfig" />
+    <Content Include="OpenSource\bootstrap-3.3.6\.gitattributes" />
+    <Content Include="OpenSource\bootstrap-3.3.6\.gitignore" />
+    <Content Include="OpenSource\bootstrap-3.3.6\.hound.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\.travis.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\bower.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\CHANGELOG.md" />
+    <Content Include="OpenSource\bootstrap-3.3.6\CNAME" />
+    <Content Include="OpenSource\bootstrap-3.3.6\composer.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\CONTRIBUTING.md" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap-theme.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\css\bootstrap.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="OpenSource\bootstrap-3.3.6\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\assets\css\docs.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap-theme.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\css\bootstrap.min.css.map" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\LICENSE" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\browser-bugs.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\core-team.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\glyphicons.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\sass-team.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\showcase.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_data\translations.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_jade\customizer-nav.jade" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_jade\customizer-variables.jade" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_plugins\bridge.rb" />
+    <Content Include="OpenSource\bootstrap-3.3.6\docs\_plugins\bugify.rb" />
+    <Content Include="OpenSource\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="OpenSource\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="OpenSource\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="OpenSource\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\.jshintrc" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\configBridge.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\grunt\sauce_browsers.yml" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\.jscsrc" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\.jshintrc" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\README.md" />
+    <Content Include="OpenSource\bootstrap-3.3.6\js\tests\unit\.jshintrc" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\.csscomb.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\.csslintrc" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\alerts.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\badges.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\bootstrap.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\breadcrumbs.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\button-groups.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\buttons.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\carousel.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\close.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\code.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\component-animations.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\dropdowns.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\forms.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\glyphicons.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\grid.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\input-groups.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\jumbotron.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\labels.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\list-group.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\media.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\alerts.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\background-variant.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\border-radius.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\buttons.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\center-block.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\clearfix.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\forms.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\gradients.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\grid-framework.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\grid.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\hide-text.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\image.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\labels.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\list-group.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\nav-divider.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\nav-vertical-align.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\opacity.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\pagination.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\panels.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\progress-bar.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\reset-filter.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\reset-text.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\resize.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\responsive-visibility.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\size.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\tab-focus.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\table-row.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\text-emphasis.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\text-overflow.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\mixins\vendor-prefixes.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\modals.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\navbar.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\navs.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\normalize.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\pager.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\pagination.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\panels.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\popovers.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\print.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\progress-bars.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\responsive-embed.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\responsive-utilities.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\scaffolding.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\tables.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\theme.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\thumbnails.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\tooltip.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\type.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\utilities.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\variables.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\less\wells.less" />
+    <Content Include="OpenSource\bootstrap-3.3.6\LICENSE" />
+    <Content Include="OpenSource\bootstrap-3.3.6\nuget\bootstrap.less.nuspec" />
+    <Content Include="OpenSource\bootstrap-3.3.6\nuget\bootstrap.nuspec" />
+    <Content Include="OpenSource\bootstrap-3.3.6\nuget\MyGet.ps1" />
+    <Content Include="OpenSource\bootstrap-3.3.6\package.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\README.md" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\npm-shrinkwrap.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\README.md" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\S3Cachefile.json" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\s3_cache.py" />
+    <Content Include="OpenSource\bootstrap-3.3.6\test-infra\uncached-npm-install.sh" />
+    <Content Include="OpenSource\bootstrap-3.3.6\_config.yml" />
+    <Content Include="OpenSource\bootstrap-submenu-master\bower.json" />
+    <Content Include="OpenSource\bootstrap-submenu-master\composer.json" />
+    <Content Include="OpenSource\bootstrap-submenu-master\dist\css\bootstrap-submenu.css.map" />
+    <Content Include="OpenSource\bootstrap-submenu-master\less\bootstrap-submenu.less" />
+    <Content Include="OpenSource\bootstrap-submenu-master\less\mixins.less" />
+    <Content Include="OpenSource\bootstrap-submenu-master\LICENSE" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="todo.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\SampleRawSQL\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\SampleHtmlHelper\Index.cshtml" />
+    <Content Include="Views\SampleCRUD\Index.cshtml" />
+    <Content Include="Views\SampleCRUD\Create.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\Organization\Index.cshtml" />
+    <Content Include="Views\Organization\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36369</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/XEngine</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

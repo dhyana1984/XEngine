@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XEngine.Framework</name>
+    </assembly>
+    <members>
+        <member name="M:XEngine.Data.IRepositoryBase`1.Insert(`0)">
+            <summary>
+            新增实体
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:XEngine.Data.IRepositoryBase`1.Delete(System.Object)">
+            <summary>
+            根据ID删除实体接口
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:XEngine.Data.IRepositoryBase`1.Update(`0)">
+            <summary>
+            更新实体接口
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String)">
+            <summary>
+            获取全部对象
+            </summary>
+            <param name="filter"></param>
+            <param name="orderBy"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.GetByID(System.Object)">
+            <summary>
+            根据ID获取实体
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.Insert(`0)">
+            <summary>
+            新增实体
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.Delete(System.Object)">
+            <summary>
+            根据id删除实体
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.Delete(`0)">
+            <summary>
+            根据实体删除
+            </summary>
+            <param name="entityToDelete"></param>
+        </member>
+        <member name="M:XEngine.Data.RepositoryBase`1.Update(`0)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="entityToUpdate">待更新的实体</param>
+        </member>
+        <member name="T:XEngine.Data.UnitOfWorkBase`1">
+            <summary>
+            Deprecated ， 目前无法共用
+            </summary>
+        </member>
+        <member name="F:XEngine.Data.UnitOfWorkBase`1.context">
+            <summary>
+            用继承类的context重写
+            </summary>
+        </member>
+        <member name="M:XEngine.Data.UnitOfWorkBase`1.Save">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XEngine.Data.UnitOfWorkBase`1.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:XEngine.Data.UnitOfWorkBase`1.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:XEngine.Data.XEngineContext.#ctor">
+            <summary>
+            跟 构造函数同名的ConnectString
+            </summary>
+        </member>
+        <member name="M:XEngine.Data.XEngineContext.#ctor(System.String)">
+            <summary>
+            指定ConnectionString名
+            </summary>
+            <param name="nameOrConnectionString"></param>
+        </member>
+        <member name="M:XEngine.Data.XEngineContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            test
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+    </members>
+</doc>

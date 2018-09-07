@@ -1,0 +1,11 @@
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\XEngine.Framework.dll.config
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\XEngine.Framework.dll
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\XEngine.Framework.pdb
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\EntityFramework.dll
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\EntityFramework.SqlServer.dll
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\EntityFramework.xml
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\EntityFramework.SqlServer.xml
+D:\Workspace\XEngine\XEngine.Framework\obj\Release\XEngine.Framework.dll
+D:\Workspace\XEngine\XEngine.Framework\obj\Release\XEngine.Framework.pdb
+D:\Workspace\XEngine\XEngine.Framework\bin\Release\XEngine.Framework.XML
+D:\Workspace\XEngine\XEngine.Framework\obj\Release\XEngine.Framework.csprojResolveAssemblyReference.cache

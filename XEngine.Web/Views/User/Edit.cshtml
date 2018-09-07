@@ -1,0 +1,136 @@
+﻿@model XEngine.Web.Models.SysUser
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>修改用户 - @Model.Name</h2>
+
+@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+            <li class="active" role="presentation">
+                <a href="#general" id="general-tab" role="tab" data-toggle="tab">基本设定</a>
+            </li>
+            <li role="presentation">
+                <a href="#role" id="member-tab" role="tab" data-toggle="tab">角色</a>
+            </li>
+            <li role="presentation">
+                <a href="#permission" id="permission-tab" role="tab" data-toggle="tab">权限</a>
+            </li>
+        </ul>
+
+        <div id="myTabContent" class="tab-content">
+            <div id="general" class="tab-pane fade active in" role="tabpanel">
+                <br />
+                <div class="row">
+                    <div class="col-md-11">
+                        @Html.ValidationSummary(true)
+                        @Html.HiddenFor(model => model.ID)
+
+                        <div class="form-group">
+                            <label for="Name" class="col-md-1 control-label" style="text-align:left">登录ID</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="DisplayName" class="col-md-1 control-label" style="text-align:left">显示名</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="DisplayName" name="DisplayName" value="@Model.DisplayName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email" class="col-md-1 control-label" style="text-align:left">邮箱</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password" class="col-md-1 control-label" style="text-align:left">密码</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Description" class="col-md-1 control-label" style="text-align:left">描述</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="Description" name="Description" value="@Model.Description">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectIsActive" class="col-md-1 control-label" style="text-align:left">是否启用</label>
+                            <div class="col-md-2">
+                                @Html.DropDownList("selectIsActive", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ModifiedDate" class="col-md-1 control-label" style="text-align:left">修改日期</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" id="ModifiedDate" name="ModifiedDate" disabled value="@Model.ModifiedDate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="role" class="tab-pane fade">
+                <br />
+                <div class="row">
+                    <div class="col-md-11">
+                        <div>
+                            设定使用者的角色
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @{
+    List<XEngine.Web.ViewModels.AssignedRoleData> roles = ViewBag.Roles;
+    foreach (var item in roles)
+    {
+        <label style="font-weight:normal">
+            <input type="checkbox" name="selectedUsers" value="@item.RoleID"
+                   @(Html.Raw(item.Assigned ? "checked=\"checked\"" : "")) />
+            @item.RoleName
+        </label> @:<br />
+    }
+
+                                                }
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div id="permission" class="tab-pane fade"></div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-info" id="btnOk">确定</button>
+            <button type="button" class="btn btn-info" id="btnCancel">取消</button>
+        </div>
+    </div>
+
+
+
+}
+
+<div>
+    @Html.ActionLink("返回", "Index")
+</div>
+
+@section scripts{
+
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Roles>
+  <Controller name="Home">
+    <Action name="Index">Administrators</Action>
+    <Action name="About">Manager,Administrators,General Users</Action>
+    <Action name="Contact">Administrators</Action>
+  </Controller>
+</Roles>

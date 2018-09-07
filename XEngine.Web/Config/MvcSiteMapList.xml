@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--填绝对路径，类似 /XEngine/home/about-->
+<MvcSiteMaps>
+  <MvcSiteMap  ParnetID = "0" Name = "主页"  Url = "/XEngine/" ID = "1" ></MvcSiteMap>
+  <MvcSiteMap  ParnetID = "1" Name = "组织"  Url = "/XEngine/Organization" ID = "2"></MvcSiteMap>
+  <MvcSiteMap  ParnetID = "2" Name = "关于"  Url = "/XEngine/home/about" ID = "3"></MvcSiteMap>
+</MvcSiteMaps>

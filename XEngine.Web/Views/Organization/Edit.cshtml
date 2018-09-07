@@ -1,0 +1,115 @@
+﻿@model XEngine.Web.Models.SysOrganization
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>组织机构管理</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.ID)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-2" })
+                <div class="col-md-9">
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Type, 1, new { @id = "radioType1" })单位
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Type, 2, new { @id = "radioType2" })部门
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Type, 3, new { @id = "radioType3" })岗位
+                    </label>
+
+
+                    @*<label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 单位
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 部门
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 岗位
+                    </label>*@
+                    @Html.ValidationMessageFor(model => model.Type)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*<label class="radio-inline">
+                        <input type="radio" name="radioStatus"  value="0"> 正常
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="radioStatus"  value="1"> 冻结
+                    </label>*@
+
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Status, 0, new { @id = "radioStatus0" })正常
+                    </label>
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(model => model.Status, 1, new { @id = "radioStatus1" })冻结
+                    </label>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ChargeLeader, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+
+                    @Html.HiddenFor(model=>model.ChargeLeader)
+                    @* 根据 ChargeLeader显示出用户名*@
+                    @Html.EditorFor(model => model.ChargeLeader)
+                    @Html.ValidationMessageFor(model => model.ChargeLeader)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Leader, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Leader)
+                    @Html.ValidationMessageFor(model => model.Leader)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="保存" class="btn btn-default" />
+                    <a class="btn btn-default" href="#">添加组织</a>
+                    <a class="btn btn-default" href="#">添加人员</a>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

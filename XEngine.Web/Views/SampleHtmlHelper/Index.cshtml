@@ -1,0 +1,11 @@
+﻿
+@model XEngine.Web.Models.SysRole
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>绑定dropdownlist</div>
+
+@Html.DropDownListFor(model => model.Name, ViewData["selectPrivilegeMaster"] as SelectList, new { @class = "control-label col-md-2" })

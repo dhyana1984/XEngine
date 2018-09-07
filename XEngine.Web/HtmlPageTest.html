@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+
+    <script>
+
+        $(function () {
+            var obj01 = { name: "英文名：Sam Xiao", age: 29, girlfriend: { name: "Yang", age: 29 } }
+            var obj02 = { name: "中文名：XiaoJian", girlfriend: { name: "YY" } };
+
+            var a = $.extend(obj01, obj02);
+            var b = $.extend(true, obj01, obj02);
+            var c = $.extend({}, obj01, obj02);
+            var d = $.extend(true, {}, obj01, obj02);
+        })
+
+
+    </script>
+</body>
+</html>
